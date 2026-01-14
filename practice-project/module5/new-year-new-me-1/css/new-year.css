@@ -293,7 +293,13 @@ footer {
     }
 
     nav {
-        padding: 40px;
+        padding: 40px 20px;
+        justify-content: center;
+    }
+
+    .nav-list {
+        margin: 0;
+        font-size: 14px;
     }
 
     #banner {

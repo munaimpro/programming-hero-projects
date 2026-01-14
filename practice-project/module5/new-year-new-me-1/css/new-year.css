@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.font-work-sans {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+:root {
+    --white: #ffffff;
+    --dark-gray: #444343;
+    --dark-color: #151414;
+    --light-gray: #737272;
+    --orange: #F15B22;
+}
+
+
+/* shared styles */
+button {
+    cursor: pointer;
+    padding: 20px 36px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.button-primary {
+    border-radius: 5px;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.button-secondary {
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* navigation section style */
+nav {
+    display: flex;
+    padding: 40px 60px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: color .3s ease-in-out;
+}
+
+.nav-item:hover {
+    color: var(--orange);
+}
+
+/* banner section styles */
+header {
+    background-image: url(../images/banner/banner1.png);
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#banner {
+    padding: 216px 230px 166px;
+}
+
+.banner-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.banner-content {
+    max-width: 525px;
+    text-align: right;
+    float: right;
+}
+
+.banner-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.banner-content p {
+    color: var(--dark-gray);
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 32px;
+}
+
+
+/* previous year section style */
+#previous-year,
+#my-plans,
+#call-to-action,
+footer {
+    padding-top: 130px;
+}
+
+.previous-year-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 87px;
+}
+
+.previous-year-content .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--dark-color);
+}
+
+.previous-year-content p, ul {
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.previous-year-content ul li {
+    margin-bottom: 8px;
+}
+
+
+/* my plans section style */
+.my-plans-content {
+    display: flex;
+    gap: 86px;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+#my-plans .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.my-plan-card {
+    text-align: center;
+}
+
+.my-plan-card img {
+    width: 92.96px;
+    height: 92.96px;
+    margin-bottom: 24px;
+}
+
+.my-plan-card h4 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 16px;
+}
+
+.my-plan-card p {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--light-gray);
+}
+
+
+/* call to action section style */
+.cta-container {
+    border-radius: 8px;
+    padding: 60px 65px;
+    background-image: url('../images/gradient2.png'), url('../images/watch.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.cta-content {
+    max-width: 460px;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 24px;
+}
+
+
+/* footer section style */
+footer {
+    background-color: var(--dark-color);
+    padding: 130px 0 0 0;
+    margin-top: 130px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-address {
+    max-width: 485px;
+}
+
+.footer-address h2 {
+    font-size: 45px;
+    color: #F8F8F8;
+    margin-bottom: 16px;
+}
+
+.footer-address p, address {
+    font-size: 16px;
+    margin-bottom: 24px;
+    color: var(--white);
+    line-height: 26px;
+}
+
+.footer-address address a {
+    color: var(--white);
+    text-decoration: none;
+    font-style: normal;
+}
+
+.footer-address address {
+    margin-bottom: 32px;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-subscribe h3 {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 31px;
+}
+
+.footer-subscribe input[type="email"] {
+    padding: 21px;
+    width: 325px;
+    border-radius: 8px;
+    background: none;
+    border: 1px solid var(--white);
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.footer-subscribe ::placeholder {
+    color: #F3F3F3;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--dark-gray);
+    padding: 20px 0;
+    font-size: 18px;
+    color: var(--white);
+    margin-top: 50px;
+}
+
+
+/* responsive styles for small devices */
+@media screen and (max-width: 576px) {
+    #banner {
+        padding: 50px 20px;
+    }
+
+    .banner-container,
+    .previous-year-container,
+    .my-plans-content,
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .banner-content {
+        text-align: center;
+    }
+
+    .banner-content h2 {
+        font-size: 2rem;
+    }
+
+    #previous-year,
+    #my-plans,
+    #call-to-action,
+    footer {
+        padding-top: 70px;
+    }
+
+    .previous-year-container {
+        gap: 45px;
+    }
+
+    .previous-year-content {
+        text-align: center;
+        margin: 0 20px;
+    }
+
+    .previous-year-content ul {
+        text-align: start;
+    }
+
+    .previous-year-img img {
+        width: 100%;
+    }
+
+    .cta-container {
+        padding: 30px 35px;
+    }
+
+    .footer-top {
+        gap: 50px;
+        padding: 20px;
+    }
+
+    .footer-bottom {
+        margin: 50px 20px 0px 20px;
+    }
+}
+
+/* responsive styles for medium devices */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    #banner {
+        padding: 50px;
+    }
+
+    .previous-year-container,
+    .my-plans-content {
+        flex-direction: column;
+    }
+
+    .banner-content h2 {
+        font-size: 2rem;
+    }
+
+    #previous-year,
+    #my-plans,
+    #call-to-action,
+    footer {
+        padding-top: 70px;
+    }
+
+    .previous-year-container {
+        gap: 45px;
+    }
+
+    .previous-year-content {
+        margin: 0 20px;
+    }
+
+    .previous-year-content ul {
+        text-align: start;
+    }
+
+    .previous-year-img img {
+        width: 100%;
+    }
+
+    .my-plans-content {
+        flex-direction: row;
+        padding: 0 20px;
+        gap: 18px;
+    }
+
+    .cta-container {
+        margin: 0 20px;
+    }
+
+    .footer-top {
+        gap: 50px;
+        padding: 20px;
+    }
+
+    .footer-bottom {
+        margin: 50px 20px 0px 20px;
+    }
+}

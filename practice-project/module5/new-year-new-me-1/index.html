@@ -11,15 +11,21 @@
 </head>
 <body class="font-work-sans">
     <header>
-        <!-- navigation section -->
-        <nav>
+        <!-- Navigation Section -->
+        <nav class="main-nav">
             <ul class="nav-list">
-                <li><a class="nav-item" href="#">Home</a></li>
-                <li><a class="nav-item" href="#">Previous Year</a></li>
-                <li><a class="nav-item" href="#">My Plan</a></li>
-                <li><a class="nav-item" href="#">Contact</a></li>
+                <li><a href="#" class="nav-item">Home</a></li>
+                <li><a href="#" class="nav-item">Previous Year</a></li>
+                <li><a href="#" class="nav-item">My Plan</a></li>
+                <li><a href="#" class="nav-item">Contact</a></li>
             </ul>
+        
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                ☰
+            </button>
         </nav>
+        
         <!-- banner section -->
         <section id="banner">
             <div class="banner-container">
@@ -125,5 +131,15 @@
             </div>
         </div>
     </footer>
+
+<!-- Script for mobile menu -->
+<script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('.nav-list');
+
+    toggleBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

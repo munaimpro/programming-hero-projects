@@ -13,16 +13,18 @@
     <!-- header section start -->
     <header>
         <nav class="navigation">
+            <div class="responsive-cart-icon">
+                <a href="#" class="nav-item"><img src="./images/icons/clarity_shopping-cart-outline-badged.svg" alt="shopping cart icon"></a>
+            </div>
+            
             <div class="logo">
                 <h3>Influencer products</h3>
             </div>
         
             <!-- Hamburger icon for mobile -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                ☰
+            </button>
         
             <ul class="nav-list">
                 <li><a href="#" class="nav-item">Home</a></li>
@@ -30,7 +32,7 @@
                 <li><a href="#" class="nav-item">Signup</a></li>
                 <li><a href="#" class="nav-item">Login</a></li>
                 <li><a href="#" class="nav-item"><img src="./images/icons/akar-icons_search.svg" alt="search icon"></a></li>
-                <li><a href="#" class="nav-item"><img src="./images/icons/clarity_shopping-cart-outline-badged.svg"
+                <li class="cart-icon"><a href="#" class="nav-item"><img src="./images/icons/clarity_shopping-cart-outline-badged.svg"
                             alt="shopping cart icon"></a></li>
             </ul>
         </nav>
@@ -274,13 +276,10 @@
 
 <!-- script for mobile menu -->
 <script>
-    const hamburger = document.querySelector('.hamburger');
+    const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
 
-    hamburger.addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
         navList.classList.toggle('active');
-
-        // Optional: Animate hamburger to X
-        hamburger.classList.toggle('open');
     });
 </script>

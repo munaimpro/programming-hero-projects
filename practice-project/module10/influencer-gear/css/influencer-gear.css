@@ -71,6 +71,14 @@ section {
     text-align: end;
 }
 
+.menu-toggle {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 
 /* navigation section style */
 .navigation {
@@ -108,6 +116,11 @@ section {
     color: var(--primary-color);
 }
 
+.responsive-cart-icon,
+.menu-toggle {
+    display: none;
+}
+
 /* Hamburger icon */
 .hamburger {
     display: none;
@@ -126,38 +139,10 @@ section {
     transition: 0.3s;
 }
 
-/* Mobile menu */
-@media (max-width: 992px) {
-    .navigation {
-        padding: 2rem 5%;
-    }
-
-    .nav-list {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        /* hide offscreen */
-        width: 60%;
-        height: 100vh;
-        background-color: var(--white);
-        flex-direction: column;
-        gap: 2rem;
-        padding: 4rem 2rem;
-        transition: 0.3s;
-        z-index: 9999;
-    }
-
-    .nav-list.active {
-        right: 0;
-        /* show menu */
-    }
-
-    .hamburger {
-        display: flex;
-        /* show hamburger */
-    }
+.active {
+    height: initial !important;
+    padding: 1.5rem 0;
 }
-
 
 /* hero section style */
 .banner-container {
@@ -371,7 +356,39 @@ responsive design styles
 ======================================*/
 /* small device */
 @media screen and (max-width: 576px) {
+    .cart-icon {
+        display: none;
+    }
+    
+    .responsive-cart-icon,
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        padding: 1rem;
+        flex-direction: row-reverse;
+    }
+
+    .nav-list {
+        height: 0px;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: var(--white);
+        gap: 1.2rem;
+        transition: .3s ease-in-out all;
+    }
+
     .banner-container {
         flex-direction: column-reverse;
+    }
+
+    .sponsor-container,
+    .featured-product-container {
+        flex-direction: column;
     }
 }

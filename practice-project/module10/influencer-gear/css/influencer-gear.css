@@ -201,6 +201,82 @@ section {
 }
 
 
+/* popular-collection section styles */
+#popular-collection .section-heading {
+    color: var(--hero-color);
+    font-size: 28px;
+    line-height: 70px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#popular-collection .popular-collection-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.popular-collection-content .product-card {
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+    padding: 18px 16px;
+}
+
+.product-card img {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.product-card .product-name {
+    color: #18191F;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-bottom: 6px;
+}
+
+.product-card .product-price {
+    font-family: Inter;
+    line-height: 150%;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.product-card .star {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-card .rating {
+    color: #5E6366;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.product-card .icon {
+    font-size: 25px;
+    color: #FB8200;
+    position: relative;
+    top: 5px;
+}
+
+.product-card .product-description {
+    color: #787885;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 143%;
+    letter-spacing: 1.8%;
+}
+
+
+
+
 
 
 

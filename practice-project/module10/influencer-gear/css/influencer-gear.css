@@ -23,22 +23,22 @@
 
 
 /* shared styles */
-button {
+.button {
     cursor: pointer;
     padding: 10px 24px;
     border: none;
     font-size: 16px;
     font-weight: 700;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
 }
 
 .button-primary {
     background-color: var(--primary-color);
     color: var(--white);
-}
-
-.button-primary:hover {
-    background-color: darken(var(--primary-color), 10%);
-    transform: translateY(-2px);
 }
 
 .button-transparent {
@@ -312,6 +312,55 @@ section {
 }
 
 
+/* footer section related styles */
+footer {
+    background-color: #0A0826;
+    padding: 50px 0;
+}
+
+footer .footer-container {
+    max-width: 262px;
+}
+
+.footer-container .footer-content h2 {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.footer-container .footer-content .copyright {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #D9DBE1;
+    text-align: center;
+}
+
+.footer-container .footer-social ul {
+    display: flex;
+    margin-top: 18px;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social ul li {
+    background-color: var(--text-grey);
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social a {
+    color: var(--white);
+}
 
 
 

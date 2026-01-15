@@ -193,6 +193,14 @@ section {
 }
 
 
+/* sponsor section styles */
+#sponsor .sponsor-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
 
 
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppines:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .font-poppines {
     font-family: "Poppines", sans-serif;
@@ -6,7 +6,10 @@
     font-style: normal;
 }
 
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -33,6 +36,11 @@ button {
     color: var(--white);
 }
 
+.button-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: translateY(-2px);
+}
+
 ul {
     list-style-type: none;
 }
@@ -46,6 +54,10 @@ a {
     margin: 0 auto;
 }
 
+section {
+    margin-bottom: 100px;
+}
+
 
 /* navigation section style */
 .navigation {
@@ -53,6 +65,10 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 50px 120px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--white);
 }
 
 .logo h3 {
@@ -72,4 +88,120 @@ a {
     color: var(--hero-color);
     font-size: 1rem;
     font-weight: 600;
+    transition: .3s ease-in-out all;
+}
+
+.nav-list li:hover .nav-item {
+    color: var(--primary-color);
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    /* desktop hide */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--hero-color);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Mobile menu */
+@media (max-width: 992px) {
+    .navigation {
+        padding: 2rem 5%;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* hide offscreen */
+        width: 60%;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 2rem;
+        padding: 4rem 2rem;
+        transition: 0.3s;
+        z-index: 9999;
+    }
+
+    .nav-list.active {
+        right: 0;
+        /* show menu */
+    }
+
+    .hamburger {
+        display: flex;
+        /* show hamburger */
+    }
+}
+
+
+/* hero section style */
+.banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-container > * {
+    color: var(--hero-color);
+}
+
+.banner-container .banner-content {
+    max-width: 582px;
+}
+
+.banner-content h2 {
+    font-size: 52px;
+    line-height: 70px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.banner-container button {
+    border-radius: 41px;
+    display: flex;
+    gap: .5rem;
+}
+
+.banner-container .banner-image {
+    background-image: url('../images/Circle\ design.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 475px;
+    height: 475px;
+}
+
+.banner-image img {
+    width: 100%;
+}
+
+
+
+
+
+/*======================================
+responsive design styles
+======================================*/
+/* small device */
+@media screen and (max-width: 576px) {
+    .banner-container {
+        flex-direction: column-reverse;
+    }
 }

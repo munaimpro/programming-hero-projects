@@ -10,7 +10,7 @@
 <body class="font-poppines">
     <!-- header section start -->
     <header>
-        <nav class="navigation">
+        <!-- <nav class="navigation">
             <div class="logo">
                 <h3>Influencer products</h3>
             </div>
@@ -22,7 +22,56 @@
                 <li><a href="#" class="nav-item"><img src="./images/icons/akar-icons_search.svg" alt="search icon"></a></li>
                 <li><a href="#" class="nav-item"><img src="./images/icons/clarity_shopping-cart-outline-badged.svg" alt="shopping cart icon"></a></li>
             </ul>
+        </nav> -->
+        <nav class="navigation">
+            <div class="logo">
+                <h3>Influencer products</h3>
+            </div>
+        
+            <!-- Hamburger icon for mobile -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        
+            <ul class="nav-list">
+                <li><a href="#" class="nav-item">Home</a></li>
+                <li><a href="#" class="nav-item">Products</a></li>
+                <li><a href="#" class="nav-item">Signup</a></li>
+                <li><a href="#" class="nav-item">Login</a></li>
+                <li><a href="#" class="nav-item"><img src="./images/icons/akar-icons_search.svg" alt="search icon"></a></li>
+                <li><a href="#" class="nav-item"><img src="./images/icons/clarity_shopping-cart-outline-badged.svg"
+                            alt="shopping cart icon"></a></li>
+            </ul>
         </nav>
+
+        <!-- banner section start -->
+        <section id="banner">
+            <div class="container banner-container">
+                <div class="banner-content">
+                    <h2>Start your Journey as Influencer</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem vestibulum sed scelerisque eros. Lectus faucibus.</p>
+                    <button class="button-primary">Preebook now <span>-></span></button>
+                </div>
+                <div class="banner-image">
+                    <img src="./images/main-camera.png" alt="A featured camera image">
+                </div>
+            </div>
+        </section>
     </header>
 </body>
 </html>
+
+<!-- script for mobile menu -->
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav-list');
+
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('active');
+
+        // Optional: Animate hamburger to X
+        hamburger.classList.toggle('open');
+    });
+</script>

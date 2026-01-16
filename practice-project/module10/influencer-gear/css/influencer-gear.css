@@ -57,6 +57,10 @@ a {
     text-decoration: none;
 }
 
+img {
+    width: 100%;
+}
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -171,7 +175,7 @@ section {
     margin-bottom: 1rem;
 }
 
-.banner-container button {
+.banner-container .button {
     border-radius: 41px;
     display: flex;
     gap: .5rem;
@@ -179,23 +183,18 @@ section {
 
 .banner-container .banner-image {
     background-image: url('../images/Circle\ design.svg');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 475px;
-    height: 475px;
-}
-
-.banner-image img {
-    width: 100%;
 }
 
 
 /* sponsor section styles */
 #sponsor .sponsor-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 60px;
+    justify-items: center;
 }
 
 
@@ -225,7 +224,6 @@ section {
 }
 
 .product-card img {
-    width: 100%;
     margin-bottom: 16px;
 }
 
@@ -356,6 +354,10 @@ responsive design styles
 ======================================*/
 /* small device */
 @media screen and (max-width: 576px) {
+    section {
+        margin-bottom: 60px;
+    }
+
     .cart-icon {
         display: none;
     }
@@ -383,12 +385,147 @@ responsive design styles
         transition: .3s ease-in-out all;
     }
 
+    .banner-container,
+    .featured-product-container {
+        flex-direction: column-reverse;
+    }
+    
     .banner-container {
+        gap: 14px;
+    }
+
+    .banner-content,
+    .featured-content {
+        text-align: center;
+    }
+
+    .banner-content h2 {
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    .banner-content .button,
+    .featured-content .button {
+        margin: 0 auto;
+    }
+
+    #sponsor .sponsor-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0px 40px;
+    }
+
+    #popular-collection .section-heading {
+        margin-bottom: 20px;
+    }
+
+    .section-footer {
+        padding: 32px 0px;
+    }
+
+    #featured-product .featured-product-container {
+        gap: 30px;
+    }
+
+    .featured-content .section-heading {
+        line-height: 45px;
+    }
+
+    .featured-content .product-description {
+        padding: 0 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .featured-image {
+        padding: 0px 30px;
+    }
+}
+
+/* medium device */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    section {
+        margin-bottom: 60px;
+    }
+
+    .cart-icon {
+        display: none;
+    }
+
+    .responsive-cart-icon,
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        padding: 1rem;
+        flex-direction: row-reverse;
+    }
+
+    .nav-list {
+        height: 0px;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: var(--white);
+        gap: 1.2rem;
+        transition: .3s ease-in-out all;
+    }
+
+    .banner-container,
+    .featured-product-container {
         flex-direction: column-reverse;
     }
 
-    .sponsor-container,
-    .featured-product-container {
-        flex-direction: column;
+    .banner-container {
+        gap: 14px;
+    }
+
+    .banner-content,
+    .featured-content {
+        text-align: center;
+    }
+
+    .banner-content h2 {
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    .banner-content .button,
+    .featured-content .button {
+        margin: 0 auto;
+    }
+
+    #sponsor .sponsor-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0px 40px;
+    }
+
+    #popular-collection .section-heading {
+        margin-bottom: 20px;
+    }
+
+    .section-footer {
+        padding: 32px 0px;
+    }
+
+    #featured-product .featured-product-container {
+        gap: 30px;
+    }
+
+    .featured-content .section-heading {
+        line-height: 45px;
+    }
+
+    .featured-content .product-description {
+        padding: 0 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .featured-image {
+        padding: 0px 30px;
     }
 }

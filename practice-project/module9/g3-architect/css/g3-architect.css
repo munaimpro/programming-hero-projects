@@ -54,13 +54,12 @@ p {
 
 nav,
 .container {
-    width: 75%;
     margin: 0 auto;
     max-width: 1450px;
 }
 
 .menu-toggle {
-    display: block;
+    display: none;
     font-size: 24px;
     background: none;
     border: none;
@@ -78,13 +77,14 @@ main>section {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.813rem;
     font-weight: 700;
 }
 
 .fact-description {
     max-width: 540px;
 }
+
 
 /* navbar related styles */
 header {
@@ -114,6 +114,7 @@ header {
     font-weight: 500;
 }
 
+
 /* banner related styles */
 .banner-content {
     max-width: 850px;
@@ -138,11 +139,50 @@ header {
 }
 
 
+/* quick feature related styles */
+#quick-feature .container {
+    align-items: center;
+    gap: 130px;
+}
+
+.quick-feature-content {
+    max-width: 530px;
+}
+
+.quick-feature-content .section-title {
+    margin-bottom: 24px;
+}
+
+.quick-feature-content p {
+    margin-bottom: 2rem;
+}
+
+.quick-feature-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+#quick-list {
+    font-weight: 500;
+}
+
+
+
+
 /*=====================================
 responsive design styles
 =====================================*/
 /* small device */
 @media screen and (max-width: 576px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
     nav,
     .container {
         width: 90%;
@@ -173,10 +213,23 @@ responsive design styles
     .banner-content .banner-heading {
         font-size: 2rem;
     }
+
+    #quick-feature .container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    #quick-feature .quick-feature-image {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* medium device */
 @media screen and (min-width: 576px) and (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+
     nav,
     .container {
         width: 90%;
@@ -202,5 +255,27 @@ responsive design styles
         background-color: #000000;
         padding: 1.5rem;
         display: none;
+    }
+    
+    .banner-content .banner-heading {
+        font-size: 2rem;
+    }
+    
+    #quick-feature .container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    #quick-feature .quick-feature-image {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .quick-feature-image img {
+        width: 95%;
+    }
+
+    .quick-feature-content {
+        max-width: 100%;
     }
 }

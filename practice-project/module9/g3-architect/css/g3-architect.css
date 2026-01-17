@@ -59,6 +59,15 @@ nav,
     max-width: 1450px;
 }
 
+.menu-toggle {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
 main {
     max-width: 1440px;
     margin: 0 auto;
@@ -126,4 +135,72 @@ header {
 .banner-image {
     margin-bottom: 45px;
     width: 100%;
+}
+
+
+/*=====================================
+responsive design styles
+=====================================*/
+/* small device */
+@media screen and (max-width: 576px) {
+    nav,
+    .container {
+        width: 90%;
+    }
+
+    header {
+        padding-top: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        gap: 1.2rem;
+        transition: .3s ease-in-out all;
+        text-align: center;
+        background-color: #000000;
+        padding: 1.5rem;
+        display: none;
+    }
+
+    .banner-content .banner-heading {
+        font-size: 2rem;
+    }
+}
+
+/* medium device */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    nav,
+    .container {
+        width: 90%;
+    }
+
+    header {
+        padding-top: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        gap: 1.2rem;
+        transition: .3s ease-in-out all;
+        text-align: center;
+        background-color: #000000;
+        padding: 1.5rem;
+        display: none;
+    }
 }

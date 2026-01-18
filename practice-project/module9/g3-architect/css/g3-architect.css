@@ -52,6 +52,10 @@ p {
     cursor: pointer;
 }
 
+.button-primary:hover {
+    transform: scale(1.2);
+}
+
 nav,
 .container {
     margin: 0 auto;
@@ -85,6 +89,10 @@ main>section, footer {
 
 .fact-description {
     max-width: 540px;
+}
+
+.transition {
+    transition: .4s ease-in-out all;
 }
 
 
@@ -161,6 +169,12 @@ header {
     gap: 24px;
 }
 
+.quick-feature-image img:hover,
+.feature-card:hover {
+    border-color: #FF900E !important;
+    transform: translateY(-10px);
+}
+
 #quick-list {
     font-weight: 500;
 }
@@ -181,6 +195,7 @@ header {
 }
 
 .enjoy-feature-container .feature-card {
+    border: 1px solid #ffffff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0px 4px 30px 0 rgba(0, 0, 0, 0.06);
@@ -231,11 +246,16 @@ header {
 .facts-container .fact-item {
     border: 1px solid #FF900E;
     border-radius: 8px;
+    cursor: pointer;
     width: 240px;
     height: 240px;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.fact-item:hover {
+    transform: translateY(-10px);
 }
 
 .fact-item .fact-icon {
@@ -270,7 +290,6 @@ header {
 
 .sponsor-items img {
     filter: grayscale(100);
-    transition: .4s ease-in-out all;
 }
 
 .sponsor-items img:hover {
@@ -323,8 +342,14 @@ responsive design styles
         transition: .3s ease-in-out all;
         text-align: center;
         background-color: #000000;
+        padding: 0;
+        height: 0px;
+        overflow: hidden;
+    }
+
+    .active-mobile-menu {
         padding: 1.5rem;
-        display: none;
+        height: auto;
     }
 
     .banner-content .banner-heading {

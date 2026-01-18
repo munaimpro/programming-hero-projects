@@ -319,6 +319,15 @@ responsive design styles
     #experience-badge {
         margin: 0;
     }
+
+    .facts-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .fact-description {
+        margin-bottom: 80px;
+    }
 }
 
 /* medium device */
@@ -379,5 +388,14 @@ responsive design styles
 
     #experience-badge {
         margin-left: 0;
+    }
+
+    .facts-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .fact-description {
+        margin-bottom: 80px;
     }
 }

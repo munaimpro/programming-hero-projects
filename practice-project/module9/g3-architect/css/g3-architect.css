@@ -218,6 +218,49 @@ header {
 }
 
 
+/* some facts section styles */
+.facts-description {
+    max-width: 540px;
+    margin-bottom: 100px;
+}
+
+#some-facts .section-title {
+    margin-bottom: 24px;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 124px;
+}
+
+.facts-container .fact-item {
+    border: 1px solid #FF900E;
+    border-radius: 8px;
+    width: 240px;
+    height: 240px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fact-item .fact-icon {
+    margin-bottom: 10px;
+}
+
+.fact-item .fact-number {
+    font-size: 2.813rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.fact-item .fact-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
 
 /*=====================================
 responsive design styles

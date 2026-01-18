@@ -171,7 +171,7 @@ header {
 
 /* enjoy feature section styles */
 .enjoy-feature-container {
-    gap: 55px;
+    gap: 140px;
 }
 
 .enjoy-feature-content .section-title {
@@ -196,6 +196,25 @@ header {
     font-weight: 600;
     color: #131313;
     margin-bottom: 10px;
+}
+
+.featured-architect img {
+    width: 100%;
+}
+
+#experience-badge {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 45px 42px;
+    border-radius: 8px;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+
+#experience-badge span:first-child {
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 70px;
 }
 
 
@@ -244,13 +263,18 @@ responsive design styles
         font-size: 2rem;
     }
 
-    #quick-feature .container {
+    #quick-feature .container,
+    .enjoy-feature-container {
         flex-direction: column;
         gap: 50px;
     }
 
     #quick-feature .quick-feature-image {
         grid-template-columns: 1fr;
+    }
+
+    #experience-badge {
+        margin: 0;
     }
 }
 
@@ -291,7 +315,8 @@ responsive design styles
         font-size: 2rem;
     }
     
-    #quick-feature .container {
+    #quick-feature .container,
+    .enjoy-feature-container {
         flex-direction: column;
         gap: 50px;
     }
@@ -307,5 +332,9 @@ responsive design styles
 
     .quick-feature-content {
         max-width: 100%;
+    }
+
+    #experience-badge {
+        margin-left: 0;
     }
 }

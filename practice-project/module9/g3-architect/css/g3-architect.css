@@ -77,6 +77,7 @@ main>section {
 }
 
 .section-title {
+    color: #131313;
     font-size: 2.813rem;
     font-weight: 700;
 }
@@ -167,6 +168,35 @@ header {
     font-weight: 500;
 }
 
+
+/* enjoy feature section styles */
+.enjoy-feature-container {
+    gap: 55px;
+}
+
+.enjoy-feature-content .section-title {
+    padding-left: 20px;
+    border-left: 5px solid #FF900E;
+    margin-bottom: 24px;
+}
+
+.enjoy-feature-content .feature-card-container {
+    margin-top: 30px;
+}
+
+.enjoy-feature-container .feature-card {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 30px 0 rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+}
+
+.feature-card .feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #131313;
+    margin-bottom: 10px;
+}
 
 
 

@@ -28,7 +28,14 @@ async function run() {
 
         const db = client.db('wanderlust');
         const destinationCollection = db.collection('destinations');
+        
+        // Find all destination
+        app.get('/destination', async (request, response) => {
+            const result = await destinationCollection.find().toArray();
+            response.json(result);
+        })
 
+        // Insert destination data
         app.post('/destination', async (request, response) => {
             const destinationData = request.body;
             const result = await destinationCollection.insertOne(destinationData);

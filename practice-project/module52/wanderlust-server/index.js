@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 dotenv.config();
 
 const mongo_uri = process.env.MONGO_URI;
@@ -41,6 +41,24 @@ async function run() {
             const result = await destinationCollection.insertOne(destinationData);
             response.json(result);
         });
+
+        // Find single destination
+        app.get('/destination/:id', async (request, response) => {
+            const { id } = request.params;
+            const result = await destinationCollection.findOne({ _id: new ObjectId(id) });
+            response.json(result);
+        });
+
+        // Update destination data
+        app.patch('/destination/:id', async (request, response) => {
+            const { id } = request.params;
+            const updatedData = request.body;
+            const result = await destinationCollection.updateOne(
+                { _id: new ObjectId(id) },
+                { $set: updatedData }
+            );
+            response.json(result);
+        })
 
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });

@@ -28,9 +28,7 @@ export function EditModal({ destination }) {
 
     return (
         <Modal>
-            <div className="my-5 overflow-hidden">
-                <Button className="flex float-end gap-1 bg-transparent text-black btn-block"><Edit></Edit>Edit</Button>
-            </div>
+            <Button className="flex float-end gap-1 bg-transparent text-black btn-block"><Edit></Edit>Edit</Button>
 
             <Modal.Backdrop>
                 <Modal.Container placement="auto">

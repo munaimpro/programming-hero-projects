@@ -2,6 +2,7 @@ import { EditModal } from "@/components/EditModal";
 import { CalendarSearchIcon, Edit, ExternalLink, Map, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { DeleteModal } from "../../../components/DeleteModal";
 
 const DestinationDetailsPage = async ({ params }) => {
     
@@ -15,7 +16,10 @@ const DestinationDetailsPage = async ({ params }) => {
 
     return (
         <div className="container mx-auto mt-30">
-            <EditModal destination={destination}></EditModal>
+            <div className="flex gap-1 justify-end mb-10">
+                <EditModal destination={destination}></EditModal>
+                <DeleteModal destination={destination}></DeleteModal>
+            </div>
 
             <Image
                 src={imageUrl}

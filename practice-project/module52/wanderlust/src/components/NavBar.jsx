@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const NavBar = () => {
     return (
-        <nav className="flex justify-between items-center bg-white p-5 shadow-sm fixed w-full">
+        <nav className="flex justify-between items-center bg-white p-5 shadow-sm fixed w-full z-50">
             <ul className="flex gap-3">
                 <li><Link href={'/'}>Home</Link></li>
                 <li><Link href={'/destination'}>Destination</Link></li>

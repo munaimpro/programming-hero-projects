@@ -4,6 +4,7 @@ import { Button, Card, Description, FieldError, Input, Label, TextField, Form } 
 import { Check } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
 
 const onSubmit = async (event) => {
     event.preventDefault();
@@ -29,6 +30,12 @@ const onSubmit = async (event) => {
     if (error) {
         alert("Error: " + error.message);
     }
+}
+
+const handleGoogleSignin = async () => {
+    await authClient.signIn.social({
+        provider: 'google',
+    });
 }
 
 const SignupPage = () => {
@@ -103,6 +110,12 @@ const SignupPage = () => {
                         </Button>
                     </div>
                 </Form>
+                <div className='flex justify-center items-baseline'>
+                    <div>Or sign up with</div>
+                </div>
+                <div>
+                    <Button onClick={handleGoogleSignin} className="rounded-none w-full" variant="outline"><FcGoogle></FcGoogle> Sign Up with Google</Button>
+                </div>
             </Card>
         </div>
     );

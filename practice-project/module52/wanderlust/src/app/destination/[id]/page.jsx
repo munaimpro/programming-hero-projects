@@ -3,6 +3,7 @@ import { CalendarSearchIcon, Edit, ExternalLink, Map, MapPin } from "lucide-reac
 import Image from "next/image";
 import Link from "next/link";
 import { DeleteModal } from "../../../components/DeleteModal";
+import BookingCard from "@/components/BookingCard";
 
 const DestinationDetailsPage = async ({ params }) => {
     
@@ -29,29 +30,33 @@ const DestinationDetailsPage = async ({ params }) => {
                 className="mx-auto">
             </Image>
             
-            <div className="flex gap-1 items-center pt-2 px-2 text-gray-500">
-                <MapPin size={16}/>
-                <span>{country}</span>
-            </div>
-                        
-            <div className="flex justify-between items-center px-2">
-                <div className="flex justify-between">
+            <div className="flex justify-between">
+                <div className="p-2">
+                    <div className="flex gap-1 items-center pt-2 px-2 text-gray-500">
+                        <MapPin size={16} />
+                        <span>{country}</span>
+                    </div>
+
+                    <div className="flex justify-between items-center px-2">
+                        <div className="flex justify-between">
+                            <div>
+                                <h2 className="text-xl font-bold">{destinationName}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-1 items-center px-2 text-gray-500">
+                        <CalendarSearchIcon size={16} />
+                        <span>{duration}</span>
+                    </div>
+
                     <div>
-                        <h2 className="text-xl font-bold">{destinationName}</h2>
+                        <h3 className="text-3xl font-bold text-cyan-500">Overview</h3>
+                        <p>{description}</p>
                     </div>
                 </div>
 
-                <div className="font-bold text-xl"><h3>$ {price}</h3></div>
-            </div>
-            
-            <div className="flex gap-1 items-center px-2 text-gray-500">
-                <CalendarSearchIcon size={16} />
-                <span>{duration}</span>
-            </div>
-
-            <div>
-                <h3 className="text-3xl font-bold text-cyan-500">Overview</h3>
-                <p>{description}</p>
+                <BookingCard destination={destination}></BookingCard>
             </div>
         </div>
     );

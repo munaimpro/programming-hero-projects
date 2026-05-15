@@ -28,6 +28,7 @@ async function run() {
 
         const db = client.db('wanderlust');
         const destinationCollection = db.collection('destinations');
+        const bookingCollection = db.collection('bookings');
         
         // Find all destination
         app.get('/destination', async (request, response) => {
@@ -65,6 +66,13 @@ async function run() {
             const { id } = request.params;
             console.log(id);
             const result = await destinationCollection.deleteOne({ _id: new ObjectId(id) });
+            response.json(result);
+        })
+
+        // Insert booking data
+        app.post('/booking', async (request, response) => {
+            const bookingData = request.body;
+            const result = await bookingCollection.insertOne(bookingData);
             response.json(result);
         })
 

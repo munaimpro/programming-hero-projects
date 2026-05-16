@@ -30,6 +30,26 @@ async function run() {
         const destinationCollection = db.collection('destinations');
         const bookingCollection = db.collection('bookings');
         
+        // Verify Token
+        const verifyToken = (request, response, next) => {
+            const authHeader = request.headers.authorization;
+            if (!authHeader) {
+                response.status(401).json({message: "Unauthorized"});
+            }
+            
+            const token = authHeader.token.split(" ")[1];
+
+            if (!token) {
+                response.status(401).json({ message: "Unauthorized" });
+            }
+
+            if (request.headers.authorization === "loggedIn") {
+                next()
+            } else {
+                response.status(401).json({ message: "Unauthorized" });
+            }
+        },
+         
         // Find all destination
         app.get('/destination', async (request, response) => {
             const result = await destinationCollection.find().toArray();
@@ -44,7 +64,7 @@ async function run() {
         });
 
         // Find single destination
-        app.get('/destination/:id', async (request, response) => {
+        app.get('/destination/:id', verifyToken, async (request, response) => {
             const { id } = request.params;
             const result = await destinationCollection.findOne({ _id: new ObjectId(id) });
             response.json(result);

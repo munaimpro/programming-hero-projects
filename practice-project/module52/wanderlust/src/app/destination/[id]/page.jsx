@@ -4,11 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { DeleteModal } from "../../../components/DeleteModal";
 import BookingCard from "@/components/BookingCard";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 
 const DestinationDetailsPage = async ({ params }) => {
     
     const { id } = await params;
-    const response = await fetch(`http://localhost:8000/destination/${id}`);
+    const {token} = await auth.api.getToken({
+        headers: await headers()
+    })
+    console.log(token);
+    const response = await fetch(`http://localhost:8000/destination/${id}`, {
+        headers: {
+            authorization: "loggedIn"
+        }
+    });
     const destination = await response.json();
 
     const { destinationName, category, country, departureDate, description, duration, imageUrl, price, _id } = destination;

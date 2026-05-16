@@ -13,8 +13,6 @@ const DestinationDetailsPage = async ({ params }) => {
 
     const { destinationName, category, country, departureDate, description, duration, imageUrl, price, _id } = destination;
 
-    console.log(destination);
-
     return (
         <div className="container mx-auto mt-30">
             <div className="flex gap-1 justify-end mb-10">

@@ -76,6 +76,20 @@ async function run() {
             response.json(result);
         })
 
+        // Find all bookings
+        app.get('/booking/:userId', async (request, response) => {
+            const { userId } = request.params;
+            const result = await bookingCollection.find({userId: userId}).toArray();
+            response.json(result);
+        })
+
+        // Delete single booking
+        app.delete('/booking/:bookingId', async (request, response) => {
+            const {bookingId} = request.params;
+            const result = await bookingCollection.deleteOne({ _id: new ObjectId(bookingId) });
+            response.json(result);
+        })
+
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");

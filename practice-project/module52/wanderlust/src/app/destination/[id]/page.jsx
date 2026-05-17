@@ -16,7 +16,7 @@ const DestinationDetailsPage = async ({ params }) => {
     console.log(token);
     const response = await fetch(`http://localhost:8000/destination/${id}`, {
         headers: {
-            authorization: "loggedIn"
+            authorization: `Bearer ${token}`
         }
     });
     const destination = await response.json();

@@ -3,6 +3,7 @@ import { auth } from '@/lib/auth';
 import { CalendarSearch, ExternalLink, MapPin, Trash2Icon } from 'lucide-react';
 import { headers } from 'next/headers';
 
+
 const myBookingsPage = async () => {
     
     const session = await auth.api.getSession({
@@ -11,7 +12,15 @@ const myBookingsPage = async () => {
 
     const user = session?.user;
 
-    const response = await fetch(`http://localhost:8000/booking/${user?.id}`);
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    });
+
+    const response = await fetch(`http://localhost:8000/booking/${user?.id}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
     const bookings = await response.json();
 
     return (

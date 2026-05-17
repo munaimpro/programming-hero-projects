@@ -13,8 +13,6 @@ const BookingCard = ({destination}) => {
     const { data: session } = authClient.useSession()
     const user = session?.user
 
-    console.log(user);
-
     const handleBooking = async () => {
         const bookingData = {
             userId: user.id,
@@ -28,10 +26,14 @@ const BookingCard = ({destination}) => {
             depertureDate: date
         }
 
+        const { data: tokenData } = await authClient.token();
+        console.log(tokenData);
+
         const response = await fetch('http://localhost:8000/booking', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(bookingData)
         });

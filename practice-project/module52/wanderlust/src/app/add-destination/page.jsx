@@ -1,6 +1,8 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField, Select, Card } from '@heroui/react';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AddDestinationPage = () => {
 
@@ -9,12 +11,13 @@ const AddDestinationPage = () => {
         const formData = new FormData(event.currentTarget);
         const destination = Object.fromEntries(formData.entries());
         
-        console.log(destination);
+        const { data: tokenData } = await authClient.token();
 
         const response = await fetch('http://localhost:8000/destination', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(destination)
         });
@@ -22,6 +25,8 @@ const AddDestinationPage = () => {
         const data = await response.json();
 
         console.log(data);
+
+        toast.success("Destination added");
         
     }
 
